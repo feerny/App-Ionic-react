@@ -85,7 +85,7 @@ const App: React.FC = () => (
         </IonContent>
       </IonMenu>
       <IonRouterOutlet id="RegaloEliIdMenu">
-        <Route path="/all-activities" component={AllActivities} exact />
+        <Route  path="/all-activities" component={AllActivities} exact  />
         <Route path="/add-activities" component={AddActivities} exact />
         <Redirect to={"all-activities"} />
       </IonRouterOutlet>

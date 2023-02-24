@@ -14,7 +14,7 @@ import React from "react";
 
 const AllActivities: React.FC = () => {
   return (
-    <IonPage>
+    <IonPage >
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
