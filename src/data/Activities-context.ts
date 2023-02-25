@@ -14,7 +14,7 @@ export interface Activity{
 
 export interface ActivitiesContextModel{
     activities: Activity[];
-    addActivity:(tittle:string,description:string,hour:string,activityType:string)=>void;
+    addActivity:(tittle:string,description:string,hour:string,activityType:Activitietype)=>void;
     completeActivity:(activityId:string)=>void;
 }
 
