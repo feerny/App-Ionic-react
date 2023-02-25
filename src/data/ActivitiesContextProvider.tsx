@@ -71,7 +71,13 @@ const ActivitiesContextProvider: React.FC = (props) => {
     }
 
     const completeActivity=(activityId:string)=>{
-        
+        setactivities(currActivities=>{
+            const updateActivities=[...currActivities];
+            const selectedActivityindex = activities.findIndex(act=>act.id===activityId);
+            const updateActivity={...updateActivities[selectedActivityindex],isCompleted:true};
+            updateActivities[selectedActivityindex]=updateActivity;
+            return updateActivities;
+        })
     };
     const activitiesContext: ActivitiesContextModel = {
 
