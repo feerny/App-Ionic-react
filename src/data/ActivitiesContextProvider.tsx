@@ -77,14 +77,17 @@ const ActivitiesContextProvider: React.FC = (props) => {
             const updateActivity={...updateActivities[selectedActivityindex],isCompleted:true};
             updateActivities[selectedActivityindex]=updateActivity;
             return updateActivities;
-        })
+        });
     };
     const activitiesContext: ActivitiesContextModel = {
-
+        activities,
+        addActivity, 
+        completeActivity
+        
     };
     return (
-        <ActivitiesContext.Provider value={ }>
-            {props.childern}
+        <ActivitiesContext.Provider value={activitiesContext}>
+            {props.children}
         </ActivitiesContext.Provider>
     );
 };

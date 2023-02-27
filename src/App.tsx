@@ -39,6 +39,7 @@ import AddActivities from "./pages/addActivitie/AddActivitie";
 
 import { accessibilityOutline } from "ionicons/icons";
 import {addCircleOutline} from 'ionicons/icons'
+import ActivitiesContextProvider from "./data/ActivitiesContextProvider";
 
 setupIonicReact();
 
@@ -84,11 +85,14 @@ const App: React.FC = () => (
           </IonList>
         </IonContent>
       </IonMenu>
-      <IonRouterOutlet id="RegaloEliIdMenu">
-        <Route  path="/all-activities" component={AllActivities} exact  />
-        <Route path="/add-activities" component={AddActivities} exact />
-        <Redirect to={"all-activities"} />
-      </IonRouterOutlet>
+      <ActivitiesContextProvider>
+        <IonRouterOutlet id="RegaloEliIdMenu">
+          <Route  path="/all-activities" component={AllActivities} exact  />
+          <Route path="/add-activities" component={AddActivities} exact />
+          <Redirect to={"all-activities"} />
+        </IonRouterOutlet>
+      </ActivitiesContextProvider>
+
     </IonReactRouter>
   </IonApp>
 );

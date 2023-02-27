@@ -14,14 +14,17 @@ export interface Activity{
 
 export interface ActivitiesContextModel{
     activities: Activity[];
-    addActivity:(tittle:string,description:string,hour:string,activityType:Activitietype)=>void;
+    addActivity:(tittle: string, description: string, hour: string, activityType: Activitietype)=>void;
     completeActivity:(activityId:string)=>void;
+    
 }
 
 const ActivitiesContext = React.createContext<ActivitiesContextModel>({
     activities: [],
     addActivity:()=>{},
-    completeActivity:()=>{}
-})
+    completeActivity:()=>{},
+    
+    
+});
 
 export default ActivitiesContext;
